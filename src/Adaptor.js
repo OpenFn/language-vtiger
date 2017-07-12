@@ -1,7 +1,7 @@
 import { execute as commonExecute, expandReferences } from 'language-common';
 import request from 'request';
+
 import md5 from 'md5';
-// var md5 = require('md5');
 import { resolve as resolveUrl } from 'url';
 import { curry, mapValues, flatten } from 'lodash-fp';
 
@@ -60,6 +60,7 @@ function challenge(state) {
         reject(error);
       } else {
         console.log("Challenge succeeded.");
+        console.log(body)
         body = JSON.parse(body)
         resolve(body.result.token);
       }
@@ -94,6 +95,7 @@ export function login(state) {
         reject(error);
       } else {
         console.log("Login succeeded.");
+        console.log(body)
         body = JSON.parse(body)
         resolve(body);
       }
@@ -142,14 +144,15 @@ export function postElement(params) {
     const { elementType, element, operation } = expandReferences(params)(state);
 
     const url = `${hostUrl}/webservice.php`;
+    // const url = 'https://requestb.in/1irtrgz1';
 
     console.log(`Performing a(n) ${operation} on ${elementType}.`);
 
     const body = {
-      operation,
       sessionName,
-      element,
-      elementType
+      operation,
+      elementType,
+      element: JSON.stringify(element)
     }
 
     return new Promise((resolve, reject) => {
@@ -159,6 +162,7 @@ export function postElement(params) {
       }, function(error, response, body){
         error = assembleError({response, error})
         if(error) {
+          console.log(response)
           reject(error);
         } else {
           console.log(body)
