@@ -60,7 +60,7 @@ function challenge(state) {
         reject(error);
       } else {
         console.log("Challenge succeeded.");
-        console.log(body)
+        // console.log(body)
         body = JSON.parse(body)
         resolve(body.result.token);
       }
@@ -95,7 +95,7 @@ export function login(state) {
         reject(error);
       } else {
         console.log("Login succeeded.");
-        console.log(body)
+        // console.log(body)
         body = JSON.parse(body)
         resolve(body);
       }
