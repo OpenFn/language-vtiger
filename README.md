@@ -1,4 +1,9 @@
-Language Vtiger [![Build Status](https://travis-ci.org/OpenFn/language-vtiger.svg?branch=master)](https://travis-ci.org/OpenFn/language-vtiger)
+# _⚠️ MOVED TO [OpenFn/adaptors](https://github.com/OpenFn/adaptors)! ⚠️_
+
+**N.B.: New versions are available at:
+https://github.com/OpenFn/adaptors/tree/main/packages/Vtiger**
+
+# Language Vtiger (Archived)
 =============
 
 Language Pack for building expressions and operations to make calls to the Vtiger API.
