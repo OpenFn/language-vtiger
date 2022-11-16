@@ -7,13 +7,12 @@ Documentation
 -------------
 
 #### sample configuration
-```js
+
+```json
 {
-  "configuration": {
-    "hostUrl": "https://openfunction.od2.vtiger.com",
-    "username": "taylor@openfn.org",
-    "accessToken": "blahBlahBlah"
-  }
+  "hostUrl": "https://openfunction.od2.vtiger.com",
+  "username": "taylor@openfn.org",
+  "accessToken": "blahBlahBlah"
 }
 ```
 
